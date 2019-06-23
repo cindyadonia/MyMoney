@@ -52,7 +52,7 @@ public class OutcomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_outcome, container, false);
-        tlOutcomes = rootView.findViewById(R.id.tlIncomes);
+        tlOutcomes = rootView.findViewById(R.id.tlOutcomes);
 
         pref = getActivity().getApplicationContext().getSharedPreferences("MyMoney_Pref", 0);
         editor = pref.edit();
