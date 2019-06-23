@@ -193,7 +193,7 @@ public class OutcomeFragment extends Fragment {
                                 @Override
                                 public void onClick(View v) {
                                     final int dataId = v.getId();
-                                    StringRequest stringRequestDeleteBalance = new StringRequest(Request.Method.GET, apiLink +"Outcome.php?method=delete&id+"+dataId, new Response.Listener<String>() {
+                                    StringRequest stringRequestDeleteBalance = new StringRequest(Request.Method.GET, apiLink +"outcome.php?method=delete&id+"+dataId, new Response.Listener<String>() {
                                         @Override
                                         public void onResponse(String response) {
                                             JSONObject jsonObject = null;
