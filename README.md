@@ -19,8 +19,9 @@ Balance
 Income type  
  => User can insert their types of income.
 
-Outcome type 
- => User can insert thei types of outcome.
+Outcome type
+ => User can insert their types of outcome.
+
 
 # Library / External API used
 Firebase API. (to push notification)
@@ -39,6 +40,7 @@ Then Install Android Studio
 https://developer.android.com/studio/
 
 Using Android Studio to build a android software, Android Studio is integrated development environment (IDE) for Google Android Operating system, and designed specifically for android development.
+
 
 [![Latest Stable Version](https://poser.pugx.org/dericktan/phpjasper/v/stable)](https://packagist.org/packages/dericktan/phpjasper)
 [![License](https://poser.pugx.org/dericktan/phpjasper/license)](https://packagist.org/packages/dericktan/phpjasper)
