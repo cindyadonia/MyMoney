@@ -52,7 +52,7 @@ public class IncomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_balance, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_income, container, false);
         tlIncomes = rootView.findViewById(R.id.tlIncomes);
 
         pref = getActivity().getApplicationContext().getSharedPreferences("MyMoney_Pref", 0);
@@ -133,10 +133,10 @@ public class IncomeFragment extends Fragment {
                         for (int i = 0; i < jsonArray.length(); i++)
                         {
                             int rowId = jsonArray.getJSONObject(i).getInt("id");
-                            String rowDate = jsonArray.getJSONObject(i).getString("Date");
-                            String rowDescription = jsonArray.getJSONObject(i).getString("Description");
+                            String rowDate = jsonArray.getJSONObject(i).getString("date");
+                            String rowDescription = jsonArray.getJSONObject(i).getString("description");
                             String rowAmount =  jsonArray.getJSONObject(i).getString("amount");
-                            String rowTypes = jsonArray.getJSONObject(i).getString("income_tyoe_name");
+                            String rowTypes = jsonArray.getJSONObject(i).getString("income_type_name");
                             String rowSource= jsonArray.getJSONObject(i).getString("balance_name");
 
                             TableRow tableRow = new TableRow(getActivity().getApplicationContext());
