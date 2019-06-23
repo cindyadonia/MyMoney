@@ -9,4 +9,21 @@
     <item name="tvTLHeadDebitNoNonCashBalance" type="id"/>
     <item name="tvTLHeadAmountNoNonCashBalance" type="id"/>
     <item name="tvTLHeadActionNonCashBalance" type="id"/>
+
+    <item name="tvTLHeadNoIncomes" type="id"/>
+    <item name="tvTLHeadDateIncomes" type="id"/>
+    <item name="tvTLHeadDescriptionIncomes" type="id"/>
+    <item name="tvTLHeadAmountIncomes" type="id"/>
+    <item name="tvTLHeadTypeIncomes" type="id"/>
+    <item name="tvTLHeadSourceIncomes" type="id"/>
+    <item name="tvTLHeadActionIncomes" type="id"/>
+
+    <item name="tvTLHeadNoOutcomes" type="id"/>
+    <item name="tvTLHeadDateOutcomes" type="id"/>
+    <item name="tvTLHeadDescriptionOutcomes" type="id"/>
+    <item name="tvTLHeadAmountOutcomes" type="id"/>
+    <item name="tvTLHeadTypeOutcomes" type="id"/>
+    <item name="tvTLHeadDestinationOutcomes" type="id"/>
+    <item name="tvTLHeadActionOutcomes" type="id"/>
+
 </resources>
