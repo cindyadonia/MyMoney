@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvTLHeadNoCashBalance" type="id"/>
+    <item name="tvTLHeadNameCashBalance" type="id"/>
+    <item name="tvTLHeadBalanceCashBalance" type="id"/>
+    <item name="tvTLHeadActionCashBalance" type="id"/>
+    <item name="tvTLHeadNoNonCashBalance" type="id"/>
+    <item name="tvTLHeadBankNonCashBalance" type="id"/>
+    <item name="tvTLHeadDebitNoNonCashBalance" type="id"/>
+    <item name="tvTLHeadAmountNoNonCashBalance" type="id"/>
+    <item name="tvTLHeadActionNonCashBalance" type="id"/>
+</resources>

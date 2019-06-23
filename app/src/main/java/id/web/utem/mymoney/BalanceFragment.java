@@ -74,30 +74,73 @@ public class BalanceFragment extends Fragment {
 
     private void loadData() {
         // Remove all data in table
-        Toast.makeText(getActivity().getApplicationContext(), "Child count for cash" + tlCashBalance.getChildCount(), Toast.LENGTH_SHORT).show();
+        tlCashBalance.removeAllViews();
+        tlNonCashBalance.removeAllViews();
 
-        if (tlCashBalance.getChildCount() > 1)
-        {
-            for (int i = 0; i < tlCashBalance.getChildCount(); i++)
-            {
-                if (i > 0)
-                {
-                    Log.d("Removed", "Remove for Cash for id " + i);
-                    tlCashBalance.removeViewAt(i);
-                }
-            }
-        }
-        if (tlNonCashBalance.getChildCount() > 1)
-        {
-            for (int i = 0; i < tlNonCashBalance.getChildCount(); i++)
-            {
-                if (i > 0)
-                {
-                    Log.d("Removed", "Remove for Non Cash for id " + i);
-                    tlNonCashBalance.removeViewAt(i);
-                }
-            }
-        }
+        // Add header for Cash Table
+        TableRow cashTableRowHeader = new TableRow(getActivity().getApplicationContext());
+
+        TextView cashTableHeaderNo = new TextView(getActivity().getApplicationContext());
+        cashTableHeaderNo.setId(R.id.tvTLHeadNoCashBalance);
+        cashTableHeaderNo.setText("No");
+        cashTableHeaderNo.setPadding(5, 5, 5, 5);
+        cashTableRowHeader.addView(cashTableHeaderNo);
+
+        TextView cashTableHeaderName = new TextView(getActivity().getApplicationContext());
+        cashTableHeaderName.setId(R.id.tvTLHeadNameCashBalance);
+        cashTableHeaderName.setText("Name");
+        cashTableHeaderName.setPadding(5, 5, 5, 5);
+        cashTableRowHeader.addView(cashTableHeaderName);
+
+        TextView cashTableHeaderBalance = new TextView(getActivity().getApplicationContext());
+        cashTableHeaderBalance.setId(R.id.tvTLHeadBalanceCashBalance);
+        cashTableHeaderBalance.setText("Balance");
+        cashTableHeaderBalance.setPadding(5, 5, 5, 5);
+        cashTableRowHeader.addView(cashTableHeaderBalance);
+
+        TextView cashTableHeaderAction = new TextView(getActivity().getApplicationContext());
+        cashTableHeaderAction.setId(R.id.tvTLHeadActionCashBalance);
+        cashTableHeaderAction.setText("Action");
+        cashTableHeaderAction.setPadding(5, 5, 5, 5);
+        cashTableRowHeader.addView(cashTableHeaderAction);
+
+        tlCashBalance.addView(cashTableRowHeader, new TableLayout.LayoutParams(0, TableLayout.LayoutParams.MATCH_PARENT));
+
+        // Add header for Cash Table
+        TableRow nonCashTableRowHeader = new TableRow(getActivity().getApplicationContext());
+
+        TextView nonCashTableHeaderNo = new TextView(getActivity().getApplicationContext());
+        nonCashTableHeaderNo.setId(R.id.tvTLHeadNoNonCashBalance);
+        nonCashTableHeaderNo.setText("No");
+        nonCashTableHeaderNo.setPadding(5, 5, 5, 5);
+        nonCashTableRowHeader.addView(nonCashTableHeaderNo);
+
+        TextView nonCashTableHeaderBank = new TextView(getActivity().getApplicationContext());
+        nonCashTableHeaderBank.setId(R.id.tvTLHeadBankNonCashBalance);
+        nonCashTableHeaderBank.setText("Name");
+        nonCashTableHeaderBank.setPadding(5, 5, 5, 5);
+        nonCashTableRowHeader.addView(nonCashTableHeaderBank);
+
+        TextView nonCashTableHeaderDebitNo = new TextView(getActivity().getApplicationContext());
+        nonCashTableHeaderDebitNo.setId(R.id.tvTLHeadDebitNoNonCashBalance);
+        nonCashTableHeaderDebitNo.setText("Debit No");
+        nonCashTableHeaderDebitNo.setPadding(5, 5, 5, 5);
+        nonCashTableRowHeader.addView(nonCashTableHeaderDebitNo);
+
+        TextView nonCashTableHeaderAmount = new TextView(getActivity().getApplicationContext());
+        nonCashTableHeaderAmount.setId(R.id.tvTLHeadAmountNoNonCashBalance);
+        nonCashTableHeaderAmount.setText("Amount");
+        nonCashTableHeaderAmount.setPadding(5, 5, 5, 5);
+        nonCashTableRowHeader.addView(nonCashTableHeaderAmount);
+
+        TextView nonCashTableHeaderAction = new TextView(getActivity().getApplicationContext());
+        nonCashTableHeaderAction.setId(R.id.tvTLHeadActionNonCashBalance);
+        nonCashTableHeaderAction.setText("Action");
+        nonCashTableHeaderAction.setPadding(5, 5, 5, 5);
+        nonCashTableRowHeader.addView(nonCashTableHeaderAction);
+
+        tlNonCashBalance.addView(nonCashTableRowHeader, new TableLayout.LayoutParams(0, TableLayout.LayoutParams.MATCH_PARENT));
+
 
         final RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
@@ -117,6 +160,8 @@ public class BalanceFragment extends Fragment {
                             String rowAmount = jsonArray.getJSONObject(i).getString("amount");
 
                             TableRow tableRow = new TableRow(getActivity().getApplicationContext());
+                            int tableRowId = 1000 + rowId;
+                            tableRow.setId(tableRowId);
 
                             TextView label_no = new TextView(getActivity().getApplicationContext());
                             label_no.setId(View.generateViewId());
@@ -297,7 +342,7 @@ public class BalanceFragment extends Fragment {
         });
 
         requestQueue.add(stringRequestCashBalance);
-//        requestQueue.add(stringRequestNonCashBalance);
+        requestQueue.add(stringRequestNonCashBalance);
     }
 
 }
