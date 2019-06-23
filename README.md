@@ -27,7 +27,7 @@ Outcome type
 *	Android Volley Library. (for HTTP Request)
 
 # Setup the development environment
-- Install SDK, JDK, JRE  environment
+Install SDK, JDK, JRE  environment
 
 #### Java SDK
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
@@ -35,11 +35,11 @@ https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.
 ### Java JRE
 https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
-- Install Android Studio
+Install Android Studio
 #### Install Android Studio
 https://developer.android.com/studio/
 
-- Using Android Studio to build android software, Android Studio is integrated development environment (IDE) for Google Android Operating system, and designed specifically for android development.
+Using Android Studio to build android software, Android Studio is integrated development environment (IDE) for Google Android Operating system, and designed specifically for android development.
 
 [![Latest Stable Version](https://poser.pugx.org/dericktan/phpjasper/v/stable)](https://packagist.org/packages/dericktan/phpjasper)
 [![License](https://poser.pugx.org/dericktan/phpjasper/license)](https://packagist.org/packages/dericktan/phpjasper)
