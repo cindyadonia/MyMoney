@@ -51,15 +51,9 @@
         android:id="@+id/tvDailyIncome"
         android:layout_width="176dp"
         android:layout_height="0dp"
-<<<<<<< HEAD
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto"
-        android:text="Today Income"
-=======
         android:layout_marginTop="8dp"
         android:text="Daily Income"
->>>>>>> master
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="18sp"
