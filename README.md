@@ -21,11 +21,11 @@ This package aims to be a solution to compile and process JasperReports (.jrxml 
 * Listings
 
 
-##Thanks
+## Thanks
 
 Thanks to [Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
 
-##Questions?
+## Questions?
 
 Drop me a line on Skype [leandro.bittencourt16] or E-Mail [leandrocintrabitencourt@gmail.com]
 
@@ -33,6 +33,6 @@ Drop me a line on Skype [danielrodrigueslima] or E-Mail [danielrodrigues-ti@hotm
 
 Drop me a line on E-Mail [derick.tan988@gmail.com]
 
-##License
+## License
 
 MIT
