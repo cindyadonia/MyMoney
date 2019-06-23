@@ -6,24 +6,28 @@ MyMoney is software built for android that provide user to manage their money by
 ## Module / Functionalities of MyMoney
 MyMoney have 6 modules, such as:
 
-#### Incomes      
-    User can insert income based on income types, and choose types of balance that will be inserted by income. 
-
-#### Outcomes      
-    User can insert outcome based on outcome types, and choose types of balance that will be used for outcome. 
-
-#### Transfer     
-    User can transfer the money between types of balance.
-
 #### Balance   	 
-    User can insert their types of balance.
+    Users can insert their types of balance.
 
-#### Income type  
-    User can insert their types of income.
+#### Incomes type  
+    Users can insert their types of income.
 
-#### Outcome type
-    User can insert their types of outcome.
+#### Outcomes type
+    Users can insert their types of outcome.
+    
+#### Income      
+    Users can insert income based on income types, and choose types of balance that will be inserted by income. 
 
+#### Outcome      
+    Users can insert outcome based on outcome types, and choose types of balance that will be used for outcome. 
+
+#### Schedule
+    Users are able to make planning for outcomes (for what the outcome, and when will the outcome need to be implemented),
+    Users will get Notification as reminder of the plan, 
+    Users can update a plan status. (is the plan has been implemented or has not been implemented)
+    
+#### Transfer     
+    Users can transfer the money between types of balance.
 
 ## Library / External API used
 Firebase API. (to push notification)
