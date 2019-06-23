@@ -57,9 +57,13 @@ public class MainActivity extends AppCompatActivity
     // tags used to attach the fragments
     private static final String TAG_DASHBOARD = "dashboard";
     private static final String TAG_BALANCE = "balance";
+    private static final String TAG_ADD_BALANCE = "add_balance";
     private static final String TAG_INCOME = "income";
+    private static final String TAG_ADD_INCOME= "add_income";
     private static final String TAG_OUTCOME = "outcome";
+    private static final String TAG_ADD_OUTCOME = "add_outcome";
     private static final String TAG_TRANSFER = "transfer";
+    private static final String TAG_ADD_TRANSFER = "add_transfer";
     public static String CURRENT_TAG = TAG_DASHBOARD;
 
     private String[] activityTitles;
@@ -102,8 +106,21 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(MainActivity.this, "Call Toast!", Toast.LENGTH_SHORT).show();
+                if (navItemIndex == 1)
+                {
+                    CURRENT_TAG = TAG_ADD_BALANCE;
+                } else if (navItemIndex == 2)
+                {
+                    CURRENT_TAG = TAG_ADD_INCOME;
+                } else if (navItemIndex == 3)
+                {
+                    CURRENT_TAG = TAG_ADD_OUTCOME;
+                } else if (navItemIndex == 4)
+                {
+                    CURRENT_TAG = TAG_ADD_TRANSFER;
+                }
+                loadAddFragment();
             }
         });
 
@@ -181,9 +198,9 @@ public class MainActivity extends AppCompatActivity
     // show or hide the fab
     private void toggleFab() {
         if (navItemIndex == 0)
-            fab.show();
-        else
             fab.hide();
+        else
+            fab.show();
     }
 
     private Fragment getHomeFragment() {
@@ -208,6 +225,29 @@ public class MainActivity extends AppCompatActivity
                 // Transfer
                 TransferFragment transferFragment = new TransferFragment();
                 return transferFragment;
+            default:
+                return new DashboardFragment();
+        }
+    }
+
+    private Fragment getAddFragment() {
+        switch (navItemIndex) {
+            case 1:
+                // Balance
+                AddBalanceFragment addBalanceFragment = new AddBalanceFragment();
+                return addBalanceFragment;
+            case 2:
+                // Income
+                AddIncomeFragment addIncomeFragment = new AddIncomeFragment();
+                return addIncomeFragment;
+            case 3:
+                // Outcome
+                AddOutcomeFragment addOutcomeFragment = new AddOutcomeFragment();
+                return addOutcomeFragment;
+            case 4:
+                // Transfer
+                AddTransferFragment addTransferFragment = new AddTransferFragment();
+                return addTransferFragment;
             default:
                 return new DashboardFragment();
         }
@@ -260,6 +300,67 @@ public class MainActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
                         android.R.anim.fade_out);
+                fragmentTransaction.replace(R.id.frame, fragment, CURRENT_TAG);
+                fragmentTransaction.commitAllowingStateLoss();
+            }
+        };
+
+        // Load the data for fragment
+        loadData();
+
+        // If mPendingRunnable is not null, then add to the message queue
+        if (mPendingRunnable != null) {
+            mHandler.post(mPendingRunnable);
+        }
+
+        // show or hide the fab button
+        toggleFab();
+
+        //Closing drawer on item click
+        drawer.closeDrawers();
+
+        // refresh toolbar menu
+        invalidateOptionsMenu();
+    }
+
+    /***
+     * Returns respected fragment that user
+     * selected from navigation menu
+     */
+    private void loadAddFragment() {
+        Log.d("NOTICE", "Call loadAddFragment");
+        // selecting appropriate nav menu item
+        selectNavMenu();
+
+        // set toolbar title
+        setToolbarTitle();
+
+        // if user select the current navigation menu again, don't do anything
+        // just close the navigation drawer
+        if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null) {
+            Log.d("NOTICE", "CURRENT TAG : " + CURRENT_TAG);
+            Log.d("NOTICE", "NOT NULL");
+            drawer.closeDrawers();
+
+            // show or hide the fab button
+            toggleFab();
+            return;
+        }
+        Log.d("NOTICE", "Call loadAddFragment");
+
+        // Sometimes, when fragment has huge data, screen seems hanging
+        // when switching between navigation menus
+        // So using runnable, the fragment is loaded with cross fade effect
+        // This effect can be seen in GMail app
+        Runnable mPendingRunnable = new Runnable() {
+            @Override
+            public void run() {
+                // update the main content by replacing fragments
+                Fragment fragment = getAddFragment();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out);
+                Log.d("CURRENT_TAG", "CURRENT TAG IS " + CURRENT_TAG);
                 fragmentTransaction.replace(R.id.frame, fragment, CURRENT_TAG);
                 fragmentTransaction.commitAllowingStateLoss();
             }
