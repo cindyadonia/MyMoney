@@ -48,39 +48,6 @@ https://developer.android.com/studio/
 
 #### Using Android Studio to build a android software, Android Studio is integrated development environment (IDE) for Google Android Operating system, and designed specifically for android development.
 
-
-[![Latest Stable Version](https://poser.pugx.org/dericktan/phpjasper/v/stable)](https://packagist.org/packages/dericktan/phpjasper)
-[![License](https://poser.pugx.org/dericktan/phpjasper/license)](https://packagist.org/packages/dericktan/phpjasper)
-[![Monthly Downloads](https://poser.pugx.org/dericktan/phpjasper/d/monthly)](https://packagist.org/packages/dericktan/phpjasper)
-[![Total Downloads](https://poser.pugx.org/dericktan/phpjasper/downloads)](https://packagist.org/packages/dericktan/phpjasper)
-
-**Is using Linux servers?**
-
-Do not forget to grant permission 777 for the directory **/vendor/dericktan/phpjasper/src/JasperStarter/bin** and the file binary **jasperstarter**
-
-##Introduction
-
-This package aims to be a solution to compile and process JasperReports (.jrxml & .jasper files).
-
-*Some examples of what you can do:*
-
-* Invoices
-* Reports
-* Listings
-
-
-## Thanks
-
-Thanks to [Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
-
-## Questions?
-
-Drop me a line on Skype [leandro.bittencourt16] or E-Mail [leandrocintrabitencourt@gmail.com]
-
-Drop me a line on Skype [danielrodrigueslima] or E-Mail [danielrodrigues-ti@hotmail.com]
-
-Drop me a line on E-Mail [derick.tan988@gmail.com]
-
 ## License
 
 MIT
